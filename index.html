@@ -1,0 +1,179 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--IMPORT ANGULARJS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="./scripts/ngMask.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="app.js"></script>
+    <!-------------------->
+
+    <title>Humza Munir | Portfolio</title>
+</head>
+<body ng-app="portfolio" ng-class="{'body-scroll-lock': lockScroll}">
+
+    <div ng-class="{'nav-displayed': isActive}" class="nav" ng-controller="navCtrl">
+        <div ng-class="{'menu': !isActive, 'menu-displayed': isActive}">
+            <ul>
+                <li>About</li>
+                <li>Projects</li>
+                <li>Contact</li>
+                <li class="cv">CV</li>
+            </ul>
+        </div>
+
+        <div class="logo">
+            <p>HM</p>
+        </div>
+        <div class="links">
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li class="contact-link"><a href="#">Contact</a></li>
+                <li class="cv"><a href="#">CV</a></li>
+            </ul>
+        </div>
+        <div class="burger activated" ng-click="toggleMenu($event)">
+            <div ng-class="{'line-one-active': isActive, 'line-one': !isActive}"></div>
+            <div ng-class="{'line-two-active': isActive, 'line-two': !isActive}"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main-screen">
+            <div class="hello-text">
+                <span class="hello-one">Hi, </span> <span class="hello-two">I'm Humza.</span>
+            </div>
+            <div class="main-screen-content">
+                <div class="sqaures" ng-if="!lockScroll">
+                    <div class="square-one"></div>
+                    <div class="square-two"></div>
+                    <div class="square-three"></div>
+                    <div class="square-filter"></div>
+                </div>
+                <div class="details">
+                    <div class="details-text">
+                        <p>
+                            Hello, I am a student at the <span class="university-name">
+                            University of California, Irvine</span> pursuing a 
+                            Bachelor’s Degree, in Computer Science. When not busy with my 
+                            schoolwork I like to build my Skillset in full stack development, 
+                            as well as iOS Development. If you like what you see feel free to reach
+                            out as I am currently looking for opportunities.
+                        </p>
+                    </div>
+                    <div class="details-icons">
+                        <i class="fa fa-github" style="font-size:48px;"></i>
+                        <i class="fa fa-linkedin" style="font-size:48px;"></i>
+                        <i class="fa fa-envelope" style="font-size:48px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-container">
+            <div class="about-header">
+                <p class="about-text">About</p>
+            </div>
+            <div class="about-content">
+                <div class="card card-one education-card">
+                    <div class="card-text">Education <i class="fa fa-caret-right"></i></div>
+                    <div class="card-content">
+                        <span class="university-name">
+                            University of California, Irvine
+                        </span>
+                        <br>
+                        <br>
+                        <span class="degree-name">
+                            B.S. Computer Science - 2021
+                        </span>
+                    </div>
+                </div>
+                <div class="card card-two skills-card" style="height: 240px;" >
+                    <div class="card-text"> <i class="fa fa-caret-left"></i> Skills</div>
+                    <div class="card-content" style="height: 140px;">
+                        <div class="card-title">
+                            Languages
+                        </div>
+                        <div class="skills-list">
+                            <ul>
+                                <li>Python</li>
+                                <li>C++</li>
+                                <li>C#</li>
+                                <li>Java</li>
+                                <li>SQL</li>
+                            </ul>
+                            <ul>
+                                <li>JavaScript</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-one">
+                    <div class="card-text"></div>
+                    <div class="card-content">
+                        <div class="card-title">
+                            Tools / Frameworks
+                        </div>
+                        <div class="skills-list">
+                            <ul>
+                                <li>AngularJS</li>
+                                <li>Asp.NET</li>
+                                <li>Django</li>
+                                <li>ReactJS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-two">
+                    <div class="card-text"></div>
+                    <div class="card-content">
+                        <div class="card-title">
+                            Methodologies
+                        </div>
+                        <div class="skills-list">
+                            <ul>
+                                <li>Agile</li>
+                                <li>Scrum</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-container" ng-controller="contactCtrl">
+            <div class="contact-header">
+                <p class="contact-text">Contact</p>
+            </div>
+
+            
+            <div class="contact-form">
+                <form name="contact-form" action="https://formspree.io/mzbkbwba" method="POST">
+                    <label for="">Email</label>
+                    <input type="text" name="_replyto" placeholder="Enter your email...">
+                    <label for="">Phone Number</label>
+                    <input type="telephone" name="telephone" id="telephone" mask="(999) 999-9999" clean="true" ng-model="phone" placeholder="Enter your phone number...">
+                    <label for="">Message</label>
+                    <input type="hidden" name="_next" value="index.html" />
+                    <textarea name="message" cols="30" rows="10" placeholder="Enter a message..."></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <span class="copyright">© Humza Munir - 2020</span>
+        <br> <br>
+        <span class="github-view">View on GitHub</span>
+    </footer>
+
+
+    <script src="./scripts/animate.js"></script>
+</body>
+</html>
