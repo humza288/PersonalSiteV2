@@ -16,13 +16,22 @@
 </head>
 <body ng-app="portfolio" ng-class="{'body-scroll-lock': lockScroll}">
 
-    <div ng-class="{'nav-displayed': isActive}" class="nav" ng-controller="navCtrl">
+    <div class="loader" ng-if="isLoading">
+        <div class="loader-wrapper">
+            <div class="blue ball"></div>
+            <div class="red ball"></div>  
+            <div class="yellow ball"></div>  
+            <div class="green ball"></div>  
+          </div>
+    </div>
+
+    <div ng-class="{'nav-displayed': isActive, 'fade': !isLoading}" class="nav" ng-controller="navCtrl">
         <div ng-class="{'menu': !isActive, 'menu-displayed': isActive}">
             <ul>
                 <li>About</li>
                 <li>Projects</li>
                 <li>Contact</li>
-                <li class="cv">CV</li>
+                <a href="https://docs.google.com/document/d/1agnl-3-RmlTlGe2BXKE3tLZMdfBm4iiI-AFq5eKGiVM/export?format=pdf"><li class="cv">CV</li></a>
             </ul>
         </div>
 
@@ -31,10 +40,10 @@
         </div>
         <div class="links">
             <ul>
-                <li><a href="#">About</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#">Projects</a></li>
-                <li class="contact-link"><a href="#">Contact</a></li>
-                <li class="cv"><a href="#">CV</a></li>
+                <li class="contact-link"><a href="#contact">Contact</a></li>
+                <a href="https://docs.google.com/document/d/1agnl-3-RmlTlGe2BXKE3tLZMdfBm4iiI-AFq5eKGiVM/export?format=pdf"><li class="cv">CV</li></a>
             </ul>
         </div>
         <div class="burger activated" ng-click="toggleMenu($event)">
@@ -58,8 +67,8 @@
                 <div class="details">
                     <div class="details-text">
                         <p>
-                            Hello, I am a student at the <span class="university-name">
-                            University of California, Irvine</span> pursuing a 
+                            Hello, I am a student at the <a href="https://uci.edu">
+                            <span class="university-name">University of California, Irvine</span></a> pursuing a 
                             Bachelor’s Degree, in Computer Science. When not busy with my 
                             schoolwork I like to build my Skillset in full stack development, 
                             as well as iOS Development. If you like what you see feel free to reach
@@ -67,14 +76,14 @@
                         </p>
                     </div>
                     <div class="details-icons">
-                        <i class="fa fa-github" style="font-size:48px;"></i>
-                        <i class="fa fa-linkedin" style="font-size:48px;"></i>
-                        <i class="fa fa-envelope" style="font-size:48px;"></i>
+                        <a href="https://www.github.com/humza288"><i class="fa fa-github" style="font-size:48px;"></i></a>
+                        <a href="https://www.linkedin.com/in/humzamunir"><i class="fa fa-linkedin" style="font-size:48px;"></i></a>
+                        <a href="mailto:humza288@gmail.com"><i class="fa fa-envelope" style="font-size:48px;"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="about-container">
+        <div class="about-container" id="about">
             <div class="about-header">
                 <p class="about-text">About</p>
             </div>
@@ -146,22 +155,96 @@
                 </div>
             </div>
         </div>
-        <div class="contact-container" ng-controller="contactCtrl">
+
+        <div class="projects-container">
+            <div class="projects-header">
+                <p class="projects-text">Projects</p>
+            </div>
+            <div class="project-cards">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-date">
+                            <p> March 2020 </p>
+                        </div>
+                        <div class="card-title">
+                            Shredr
+                        </div>
+                        <div class="github-link">
+                            GitHub
+                        </div>
+                        <div class="used-tech">
+                            <div class="tool">ReactJS</div>
+                            <div class="tool">ReactJS</div>
+                            <div class="tool">ReactJS</div>
+                            <div class="tool">ReactJS</div>
+                        </div>
+                    </div>
+                    <div class="card-picture">
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-date">
+                            <p> March 2020 </p>
+                        </div>
+                        <div class="card-title">
+                            Shredr
+                        </div>
+                        <div class="github-link">
+                            GitHub
+                        </div>
+                        <div class="used-tech">
+                            <div class="tool">ReactJS</div>
+                            <div class="tool">ReactJS</div>
+                            <div class="tool">ReactJS</div>
+                            <div class="tool">ReactJS</div>
+                        </div>
+                    </div>
+                    <div class="card-picture">
+                        
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-date">
+                            <p> March 2020 </p>
+                        </div>
+                        <div class="card-title">
+                            Shredr
+                        </div>
+                        <div class="github-link">
+                            GitHub
+                        </div>
+                        <div class="used-tech">
+                            <div class="tool">ReactJS</div>
+                            <div class="tool">ReactJS</div>
+                            <div class="tool">ReactJS</div>
+                            <div class="tool">ReactJS</div>
+                        </div>
+                    </div>
+                    <div class="card-picture">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-container"  ng-controller="contactCtrl">
             <div class="contact-header">
                 <p class="contact-text">Contact</p>
             </div>
 
             
             <div class="contact-form">
-                <form name="contact-form" action="https://formspree.io/mzbkbwba" method="POST">
+                <form name="form" action="https://formspree.io/mzbkbwba" method="POST">
                     <label for="">Email</label>
-                    <input type="text" name="_replyto" placeholder="Enter your email...">
+                    <input type="email" ng-model="_replyto" name="_replyto" placeholder="Enter your email..." ng-class="{invalid: !form._replyto.$valid && form._replyto.$dirty}" required>
                     <label for="">Phone Number</label>
-                    <input type="telephone" name="telephone" id="telephone" mask="(999) 999-9999" clean="true" ng-model="phone" placeholder="Enter your phone number...">
+                    <input type="telephone" name="telephone" id="telephone" mask="(999) 999-9999" clean="true" ng-model="phone" placeholder="Enter your phone number..." ng-class="{'invalid': phone.length < 10 || (!phone.length && form.telephone.$dirty)}" required>
                     <label for="">Message</label>
-                    <input type="hidden" name="_next" value="index.html" />
-                    <textarea name="message" cols="30" rows="10" placeholder="Enter a message..."></textarea>
-                    <button type="submit">Send</button>
+                    <textarea name="message" ng-model="message" cols="30" rows="10" placeholder="Enter at least a 10 character message..." ng-class="{invalid: message.length < 10 || (!message.length && form.message.$dirty)}" required></textarea>
+                    <button type="submit" ng-click="reset()" ng-class="{disabled: !form.$valid || phone.length < 10 || message.length < 10}">Send</button>
                 </form>
             </div>
         </div>

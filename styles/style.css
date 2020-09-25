@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Share+Tech&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 50%;
+}
+
 body {
   margin: 0;
   background-color: #1F2833;
@@ -10,8 +20,13 @@ body a {
   color: whitesmoke;
 }
 
-.hidden {
-  display: none;
+.fade {
+  opacity: 1 !important;
+}
+
+.invalid {
+  border: 2px solid red !important;
+  border-color: red !important;
 }
 
 .body-scroll-lock {
@@ -23,14 +38,14 @@ body a {
 }
 
 .nav {
-  -webkit-animation: fadeIn 2s;
-          animation: fadeIn 2s;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   background-color: #1F2833;
   width: 100vw;
-  opacity: 100%;
+  opacity: 0;
   height: 100px;
   -webkit-box-shadow: 3px 7px 11px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 3px 7px 11px 0px rgba(0, 0, 0, 0.75);
@@ -200,6 +215,12 @@ body a {
           transform: translateY(-1015px) translateX(-30px);
 }
 
+.main-screen .main-screen-content .sqaures .square-filter:hover {
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  opacity: 0;
+}
+
 .main-screen .main-screen-content .details {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -243,6 +264,10 @@ body a {
   color: white;
 }
 
+.main-screen .main-screen-content .details .details-icons i:hover {
+  color: #66FCF1;
+}
+
 .about-container {
   width: 100%;
   background-color: transparent;
@@ -263,9 +288,9 @@ body a {
   text-align: center;
   margin: auto;
   padding-bottom: 20px;
-  margin-bottom: 100px;
+  margin-bottom: 75px;
   font-size: 60px;
-  width: 300px;
+  width: 350px;
   font-weight: bold;
   color: #66FCF1;
   border-bottom: 7px solid white;
@@ -364,12 +389,136 @@ body a {
 .about-container .about-content .card .card-content .skills-list ul li {
   padding: 5px 15px 5px 15px;
   background-color: white;
-  font-size: 16;
+  font-size: 12;
   color: #45A29E;
   border-radius: 10px;
   border: 2px solid #66FCF1;
   margin-right: 5px;
   margin-left: 5px;
+}
+
+.projects-container {
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.projects-container .projects-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.projects-container .projects-header .projects-text {
+  text-align: center;
+  margin: auto;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+  font-size: 60px;
+  width: 350px;
+  max-width: 100%;
+  font-weight: bold;
+  color: #66FCF1;
+  border-bottom: 7px solid white;
+}
+
+.projects-container .project-cards {
+  width: 100%;
+}
+
+.projects-container .project-cards .card {
+  opacity: 0;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  margin: auto;
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
+  width: 100%;
+  height: 300px;
+}
+
+.projects-container .project-cards .card .card-content {
+  padding: 10px;
+  font-family: 'Share Tech', sans-serif;
+  width: 75%;
+  height: 200px;
+  margin: auto;
+  background-color: #2A3645;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 7px 11px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 7px 11px 0px rgba(0, 0, 0, 0.75);
+}
+
+.projects-container .project-cards .card .card-content .card-date {
+  width: 100%;
+  text-align: right;
+}
+
+.projects-container .project-cards .card .card-content .card-date p {
+  margin: 0;
+  margin-top: 10px;
+  margin-right: 20px;
+  color: #66fcf2;
+}
+
+.projects-container .project-cards .card .card-content .card-title {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  width: 50%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.projects-container .project-cards .card .card-content .github-link {
+  font-size: 30px;
+  color: #45A29E;
+  text-decoration: underline;
+  text-align: center;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.projects-container .project-cards .card .card-content .used-tech {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  width: 50%;
+}
+
+.projects-container .project-cards .card .card-content .used-tech .tool {
+  padding: 5px 15px 5px 15px;
+  background-color: white;
+  font-size: 12;
+  color: #45A29E;
+  border-radius: 10px;
+  border: 2px solid #66FCF1;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.projects-container .project-cards .card .card-picture {
+  height: 200px;
+  background-color: rgba(102, 252, 242, 0.47);
+  width: 40%;
+  margin-left: 52%;
+  padding: 10px;
+  -webkit-transform: translateY(-150px);
+          transform: translateY(-150px);
+  border-radius: 10px;
 }
 
 .contact-container {
@@ -395,7 +544,7 @@ body a {
   padding-bottom: 20px;
   margin-bottom: 50px;
   font-size: 60px;
-  width: 300px;
+  width: 350px;
   font-weight: bold;
   color: #66FCF1;
   border-bottom: 7px solid white;
@@ -429,25 +578,31 @@ body a {
 }
 
 .contact-container .contact-form form input {
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
   height: 60px;
   background-color: rgba(11, 12, 16, 0.47);
-  border: 3px solid #66FCF1;
   border-radius: 10px;
   color: white;
   font-size: 18px;
   font-weight: bold;
   padding: 20px;
+  border: 2px solid transparent;
 }
 
 .contact-container .contact-form form input:focus {
-  border-color: white;
+  border: 2px solid white;
   outline: none;
 }
 
 .contact-container .contact-form form textarea {
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
   height: 300px;
+  max-width: 100%;
+  resize: none;
   background-color: rgba(11, 12, 16, 0.47);
-  border: 3px solid #66FCF1;
+  border: 2px solid transparent;
   border-radius: 10px;
   color: white;
   font-family: Helvetica;
@@ -457,11 +612,13 @@ body a {
 }
 
 .contact-container .contact-form form textarea:focus {
-  border-color: white;
+  border: 2px solid white;
   outline: none;
 }
 
 .contact-container .contact-form form button {
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
   height: 70px;
   width: 250px;
   margin: auto;
@@ -472,6 +629,8 @@ body a {
   font-size: 30px;
   font-weight: bold;
   color: #66FCF1;
+  cursor: pointer;
+  outline: none;
 }
 
 .contact-container .contact-form form button:hover {
@@ -519,6 +678,10 @@ footer .github-view {
 }
 
 @media screen and (max-width: 1000px) {
+  .nav {
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+  }
   .main-screen .main-screen-content {
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -710,7 +873,8 @@ footer .github-view {
   }
   .about-container .about-content .card {
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
+    height: 150px;
     margin: 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -729,11 +893,17 @@ footer .github-view {
     width: 100%;
     text-align: center !important;
   }
+  .about-container .about-content .card .card-text i {
+    display: none;
+  }
   .about-container .about-content .card .card-content {
     width: 100%;
     height: 300px;
     margin-top: 10px !important;
     margin-bottom: 10px !important;
+  }
+  .about-container .about-content .card .card-content .skills-list ul li {
+    font-size: 14px !important;
   }
   .about-container .about-content .education-card .card-content {
     text-align: center;
@@ -747,6 +917,118 @@ footer .github-view {
     margin: 0;
     float: none;
     text-align: center;
+  }
+  .about-container .about-content .skills-card {
+    padding-top: 50px;
+  }
+  .about-container .about-content .skills-card .card-text {
+    display: inline !important;
+  }
+  .projects-container {
+    margin-top: 100px;
+  }
+  .projects-container .projects-header .projects-text {
+    font-size: 60px !important;
+  }
+  .projects-container .project-cards .card {
+    width: 90% !important;
+    padding: 5%;
+    height: 300px;
+    margin-top: 0 !important;
+  }
+  .projects-container .project-cards .card .card-content {
+    width: calc(100% - 20px) !important;
+  }
+  .projects-container .project-cards .card .card-content .card-title {
+    width: 100%;
+  }
+  .projects-container .project-cards .card .card-content .github-link {
+    width: 100%;
+  }
+  .projects-container .project-cards .card .card-content .used-tech {
+    width: 80%;
+    margin: auto;
+  }
+  .projects-container .project-cards .card .card-picture {
+    margin-left: auto;
+    margin-right: auto;
+    height: 125px;
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
+    width: 90%;
+    -webkit-transform: none !important;
+            transform: none !important;
+  }
+  .ball {
+    width: 30px !important;
+    height: 30px !important;
+  }
+}
+
+.loader {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: #1F2833;
+}
+
+.loader-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 200px;
+  margin-top: 300px;
+}
+
+.ball {
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  margin: 0 10px;
+  -webkit-animation: 2s bounce ease infinite;
+          animation: 2s bounce ease infinite;
+}
+
+.blue {
+  background-color: white;
+}
+
+.red {
+  background-color: white;
+  -webkit-animation-delay: .25s;
+          animation-delay: .25s;
+}
+
+.yellow {
+  background-color: white;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+}
+
+.green {
+  background-color: white;
+  -webkit-animation-delay: .75s;
+          animation-delay: .75s;
+}
+
+@-webkit-keyframes bounce {
+  50% {
+    -webkit-transform: translateY(25px) scale(0.5);
+            transform: translateY(25px) scale(0.5);
+  }
+}
+
+@keyframes bounce {
+  50% {
+    -webkit-transform: translateY(25px) scale(0.5);
+            transform: translateY(25px) scale(0.5);
   }
 }
 /*# sourceMappingURL=style.css.map */

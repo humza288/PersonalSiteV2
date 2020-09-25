@@ -1,9 +1,18 @@
 var app = angular.module("portfolio", ["ngRoute", "ngMask"]);
 
-app.run(function ($rootScope) { 
-    $rootScope.lockScroll = false
+app.run(function ($rootScope, $timeout) { 
+    $rootScope.lockScroll = true
+    $rootScope.isLoading = true
 
-    // code for animating the cards
+    $rootScope.stopLoading = function() {
+        $rootScope.isLoading = false
+    }
+
+    $timeout(function () {
+        $rootScope.isLoading = false;
+        $rootScope.lockScroll = false
+    }, 2);
+
 
 })
 
@@ -19,7 +28,10 @@ app.controller('navCtrl', function($rootScope, $scope) {
 
   app.controller('contactCtrl', function($rootScope, $scope) {
 
-    $scope.phoneNumber = ""
+    $scope._replyto = ""
 
+    $scope.printEmail = function() {
+        console.log($scope.emailAddress)
+    }
 
   });
