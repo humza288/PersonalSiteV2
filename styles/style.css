@@ -959,11 +959,13 @@ footer .github-view {
     margin: 0;
     float: none;
     text-align: center;
+    font-size: 20px !important;
   }
   .about-container .about-content .education-card .card-content .degree-name {
     margin: 0;
     float: none;
     text-align: center;
+    font-size: 20px !important;
   }
   .about-container .about-content .skills-card {
     padding-top: 50px;

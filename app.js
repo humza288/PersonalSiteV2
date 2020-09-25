@@ -47,18 +47,19 @@ app.controller('navCtrl', function($rootScope, $scope, $timeout, $location) {
 
     $scope.isActive = false
 
-    $scope.toggleMenu = function(e) {
-        $rootScope.lockScroll = !$rootScope.lockScroll
-        $scope.isActive = !$scope.isActive
-    }
-
     $scope.toggleNav = function(e) {
         $timeout(function () {
             document.getElementById("navbar").style.top = "-100";
-        }, 1000);
-       
+        }, 1000);  
     }
 
+    $scope.toggleMenu = function(e) {
+        $rootScope.lockScroll = !$rootScope.lockScroll
+        $scope.isActive = !$scope.isActive
+        $timeout(function () {
+            document.getElementById("navbar").style.top = "-100";
+        }, 1000);
+    }
   });
 
   app.controller('contactCtrl', function($rootScope, $scope) {
