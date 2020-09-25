@@ -1008,8 +1008,10 @@ footer .github-view {
     height: fit-content;
     border-radius: 0 0 10px 10px;
     width: 90%;
-    -webkit-transform: none !important;
-            transform: none !important;
+    -webkit-transform: none;
+            transform: none;
+    -webkit-transform: translateX(-5px) !important;
+            transform: translateX(-5px) !important;
   }
   .projects-container .project-cards .card .card-picture .card-picture-filter {
     border-radius: 0 0 10px 10px;
