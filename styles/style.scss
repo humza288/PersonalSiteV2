@@ -38,17 +38,23 @@ body {
     display: none;
 }
 
+.boxShadow {
+    -webkit-box-shadow: 3px 7px 11px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 7px 11px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 7px 11px 0px rgba(0,0,0,0.75);
+}
+
 .nav {
-    //transition: 2s ease-in-out;
+    transition: 0.2s ease-in-out;
     animation-delay: 2.5s;
     display: flex;
     background-color: #1F2833;
     width: 100vw;
     opacity: 0;
     height: 100px;
-    -webkit-box-shadow: 3px 7px 11px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 3px 7px 11px 0px rgba(0,0,0,0.75);
-    box-shadow: 3px 7px 11px 0px rgba(0,0,0,0.75);
+    position: fixed;
+    top: 0;
+    z-index: 999;
 
     .logo {
         height: 100px;
@@ -120,7 +126,8 @@ body {
 
 .main-screen {
 
-    padding-top: 100px;
+    padding-top: 150px;
+    padding-bottom: 150px;
 
     .hello-text {
 
@@ -258,13 +265,14 @@ body {
     .about-header {
         display: flex;
         flex-direction: row;
-        width: 100%;
+        width: 80%;
+        margin: auto;
 
         .about-text {
             text-align: center;
             margin: auto;
             padding-bottom: 20px;
-            margin-bottom: 75px;
+            margin-bottom: 100px;
             font-size: 60px;
             width: 350px;
             font-weight: bold;
@@ -361,8 +369,8 @@ body {
                             color: #45A29E;
                             border-radius: 10px;
                             border: 2px solid #66FCF1;
-                            margin-right: 5px;
-                            margin-left: 5px;
+                            margin-right: 3px;
+                            margin-left: 3px;
                         }
                     }
                 }
@@ -380,7 +388,8 @@ body {
     .projects-header {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: 80%;
+        margin: auto;
 
         .projects-text {
             text-align: center;
@@ -429,14 +438,18 @@ body {
                     color: white;
                     width: 50%;
                     text-align: center;
+                    margin-top: 10px;
                     margin-bottom: 10px;
                 }
 
                 .github-link {
-                    font-size: 30px;
-                    color: #45A29E;
-                    text-decoration: underline;
-                    text-align: center;
+                    a {
+                        font-size: 30px;
+                        color: #45A29E;
+                        text-decoration: underline;          
+                    }
+                    
+                    text-align: center;  
                     width: 50%;
                     margin-bottom: 20px;
                 }
@@ -452,12 +465,12 @@ body {
                     .tool {
                         padding: 5px 15px 5px 15px;
                         background-color: white;
-                        font-size: 16;
+                        font-size: 12;
                         color: #45A29E;
                         border-radius: 10px;
                         border: 2px solid #66FCF1;
-                        margin-right: 5px;
-                        margin-left: 5px;
+                        margin-right: 3px;
+                        margin-left: 3px;
                     }
                 }
 
@@ -542,7 +555,8 @@ body {
     .contact-header {
         display: flex;
         flex-direction: row;
-        width: 100%;
+        width: 80%;
+        margin: auto;
 
         .contact-text {
             text-align: center;
@@ -819,6 +833,7 @@ footer {
     .main-screen {
         width: 100%;
         margin-bottom: 0;
+        padding-bottom: 0;
         .hello-text {
             span {
                 font-size: 45px;
@@ -969,7 +984,7 @@ footer {
             .card {
                 width: 90% !important;
                 padding: 5%;
-                height: 400px;
+                height: fit-content;
                 margin-top: 0 !important;
 
                 .card-content {
@@ -1014,8 +1029,6 @@ footer {
     }
 
   }
-
-
 
   .loader {
       position: fixed;

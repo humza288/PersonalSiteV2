@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="icon" type="image/png" href="/assets/profile.jpg" sizes="32x32">
     <!--IMPORT ANGULARJS-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="./scripts/ngMask.min.js"></script>
@@ -25,13 +25,13 @@
           </div>
     </div>
 
-    <div ng-class="{'nav-displayed': isActive, 'fade': !isLoading}" class="nav" ng-controller="navCtrl">
+    <div id="navbar" ng-class="{'nav-displayed': isActive, 'fade': !isLoading, boxShadow: showBoxShadow}" class="nav" ng-controller="navCtrl">
         <div ng-class="{'menu': !isActive, 'menu-displayed': isActive}">
             <ul>
-                <li>About</li>
-                <li>Projects</li>
-                <li>Contact</li>
-                <a href="https://docs.google.com/document/d/1agnl-3-RmlTlGe2BXKE3tLZMdfBm4iiI-AFq5eKGiVM/export?format=pdf"><li class="cv">CV</li></a>
+                <a href="#about" ng-click="toggleMenu($event)"><li>About</li></a>
+                <a href="#projects" ng-click="toggleMenu($event)"><li>Projects</li></a>
+                <a href="#contact" ng-click="toggleMenu($event)"><li>Contact</li></a>
+                <a href="https://docs.google.com/document/d/1agnl-3-RmlTlGe2BXKE3tLZMdfBm4iiI-AFq5eKGiVM/export?format=pdf" ng-click="toggleMenu($event)"><li class="cv">CV</li></a>
             </ul>
         </div>
 
@@ -40,9 +40,9 @@
         </div>
         <div class="links">
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li class="contact-link"><a href="#contact">Contact</a></li>
+                <li><a href="#about" ng-click="toggleNav($event)">About</a></li>
+                <li><a href="#projects" ng-click="toggleNav($event)">Projects</a></li>
+                <li class="contact-link"><a href="#contact" ng-click="toggleNav($event)">Contact</a></li>
                 <a href="https://docs.google.com/document/d/1agnl-3-RmlTlGe2BXKE3tLZMdfBm4iiI-AFq5eKGiVM/export?format=pdf"><li class="cv">CV</li></a>
             </ul>
         </div>
@@ -83,7 +83,7 @@
                 </div>
             </div>
         </div>
-        <div class="about-container" id="about">
+        <div id="about" class="about-container">
             <div class="about-header">
                 <p class="about-text">About</p>
             </div>
@@ -134,7 +134,7 @@
                                 <li>AngularJS</li>
                                 <li>Asp.NET</li>
                                 <li>Django</li>
-                                <li>ReactJS</li>
+                                <li>React</li>
                             </ul>
                         </div>
                     </div>
@@ -156,7 +156,7 @@
             </div>
         </div>
 
-        <div class="projects-container">
+        <div class="projects-container" id="projects">
             <div class="projects-header">
                 <p class="projects-text">Projects</p>
             </div>
@@ -170,7 +170,7 @@
                             Report Card
                         </div>
                         <div class="github-link">
-                            GitHub
+                            <a href="https://github.com/humza288/ReportCard">GitHub</a>
                         </div>
                         <div class="used-tech">
                             <div class="tool">Swift</div>
@@ -199,7 +199,7 @@
                             Minesweeper AI
                         </div>
                         <div class="github-link">
-                            GitHub
+                            <a href="https://github.com/humza288/CS171_Project">GitHub</a>
                         </div>
                         <div class="used-tech">
                             <div class="tool">Python</div>
@@ -224,7 +224,7 @@
                             Shredr
                         </div>
                         <div class="github-link">
-                            GitHub
+                            <a href="https://github.com/humza288/Shredr-Public">GitHub</a>
                         </div>
                         <div class="used-tech">
                             <div class="tool">React Native</div>
@@ -245,7 +245,7 @@
             </div>
         </div>
 
-        <div class="contact-container"  ng-controller="contactCtrl">
+        <div class="contact-container" id="contact" ng-controller="contactCtrl">
             <div class="contact-header">
                 <p class="contact-text">Contact</p>
             </div>

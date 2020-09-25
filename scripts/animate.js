@@ -18,3 +18,6 @@ cards.forEach(card => {
 forms.forEach(form => {
     observer.observe(form);
 })
+
+
+
