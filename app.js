@@ -11,7 +11,7 @@ app.run(function ($rootScope, $timeout) {
     $timeout(function () {
         $rootScope.isLoading = false;
         $rootScope.lockScroll = false
-    }, 2);
+    }, 3);
 
 
 })

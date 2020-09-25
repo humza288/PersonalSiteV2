@@ -357,7 +357,7 @@ body {
                         li {
                             padding: 5px 15px 5px 15px;
                             background-color: white;
-                            font-size: 12;
+                            font-size: 16;
                             color: #45A29E;
                             border-radius: 10px;
                             border: 2px solid #66FCF1;
@@ -452,7 +452,7 @@ body {
                     .tool {
                         padding: 5px 15px 5px 15px;
                         background-color: white;
-                        font-size: 12;
+                        font-size: 16;
                         color: #45A29E;
                         border-radius: 10px;
                         border: 2px solid #66FCF1;
@@ -474,14 +474,61 @@ body {
 
             }
 
+            // .reportcard {
+            //     background-image: url('https://www.portalguard.com/blog/wp-content/uploads/2014/06/A+1.jpg');
+            // }
+
+            // .shredr {
+            //     background-image: url('/assets/shredr.png');
+            // }
+
+            // .minesweeper {
+            //     background-image: url('https://www.pcgamesn.com/wp-content/uploads/2020/05/minesweeper-head-900x506.jpg');
+            // }
+
             .card-picture {
-                height: 200px;
-                background-color:rgba(102, 252, 242, 0.47);
+
+                height: fit-content;
+                background-position: center; 
+                background-repeat: no-repeat; 
+                background-size: cover; 
+                background-clip: content-box;
+                //background-color:rgba(102, 252, 242, 0.47);
                 width: 40%;
                 margin-left: 52%;
-                padding: 10px;
                 transform: translateY(-150px);
                 border-radius: 10px;
+
+                .card-picture-filter {
+                    transition: 0.5s ease-in-out;
+                    font-family: 'Share Tech', sans-serif;
+                    background-color: rgba(11, 12, 16, 0.47);
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                    opacity: 1;
+                    color: white;
+                    border: 5px solid #45A29E;
+                    text-align: left;
+                    font-weight: bold;
+
+                    .details {
+
+                        .details-header {
+                            font-size: 30px;
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                            color: #45A29E;
+                        }
+
+                        padding: 20px;
+                    }
+
+                }
+
+                .card-picture-filter:hover {
+                    
+                }
             }
         }
     }
@@ -922,7 +969,7 @@ footer {
             .card {
                 width: 90% !important;
                 padding: 5%;
-                height: 300px;
+                height: 400px;
                 margin-top: 0 !important;
 
                 .card-content {
@@ -946,11 +993,16 @@ footer {
                 .card-picture {
                     margin-left: auto;
                     margin-right: auto;
-                    height: 125px;
+                    height: fit-content;
                     border-radius: 0 0 10px 10px;
-                    padding: 10px;
                     width: 90%;
                     transform: none !important;
+
+                    .card-picture-filter {
+                        border-radius: 0 0 10px 10px;
+                        border-top: none;
+                    }
+
                 }
             }
         }

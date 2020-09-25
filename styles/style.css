@@ -389,7 +389,7 @@ body a {
 .about-container .about-content .card .card-content .skills-list ul li {
   padding: 5px 15px 5px 15px;
   background-color: white;
-  font-size: 12;
+  font-size: 16;
   color: #45A29E;
   border-radius: 10px;
   border: 2px solid #66FCF1;
@@ -502,7 +502,7 @@ body a {
 .projects-container .project-cards .card .card-content .used-tech .tool {
   padding: 5px 15px 5px 15px;
   background-color: white;
-  font-size: 12;
+  font-size: 16;
   color: #45A29E;
   border-radius: 10px;
   border: 2px solid #66FCF1;
@@ -511,14 +511,44 @@ body a {
 }
 
 .projects-container .project-cards .card .card-picture {
-  height: 200px;
-  background-color: rgba(102, 252, 242, 0.47);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: content-box;
   width: 40%;
   margin-left: 52%;
-  padding: 10px;
   -webkit-transform: translateY(-150px);
           transform: translateY(-150px);
   border-radius: 10px;
+}
+
+.projects-container .project-cards .card .card-picture .card-picture-filter {
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  font-family: 'Share Tech', sans-serif;
+  background-color: rgba(11, 12, 16, 0.47);
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  opacity: 1;
+  color: white;
+  border: 5px solid #45A29E;
+  text-align: left;
+  font-weight: bold;
+}
+
+.projects-container .project-cards .card .card-picture .card-picture-filter .details {
+  padding: 20px;
+}
+
+.projects-container .project-cards .card .card-picture .card-picture-filter .details .details-header {
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #45A29E;
 }
 
 .contact-container {
@@ -933,7 +963,7 @@ footer .github-view {
   .projects-container .project-cards .card {
     width: 90% !important;
     padding: 5%;
-    height: 300px;
+    height: 400px;
     margin-top: 0 !important;
   }
   .projects-container .project-cards .card .card-content {
@@ -952,12 +982,17 @@ footer .github-view {
   .projects-container .project-cards .card .card-picture {
     margin-left: auto;
     margin-right: auto;
-    height: 125px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     border-radius: 0 0 10px 10px;
-    padding: 10px;
     width: 90%;
     -webkit-transform: none !important;
             transform: none !important;
+  }
+  .projects-container .project-cards .card .card-picture .card-picture-filter {
+    border-radius: 0 0 10px 10px;
+    border-top: none;
   }
   .ball {
     width: 30px !important;
