@@ -58,7 +58,8 @@ body {
     animation-delay: 2.5s;
     display: flex;
     background-color: rgba($color: #071629, $alpha: 0.80);
-    width: 100vw;
+    width: 90vw;
+    margin-left: 5vw;
     opacity: 0;
     height: 100px;
     position: fixed;
@@ -350,7 +351,7 @@ body {
                     .degree-icon {
                         margin-left: auto;
                         margin-right: auto;
-                        width: 40%;
+                        width: 100px;
                         font-size: 20px;
                         display: flex;
                         justify-content: space-evenly;

@@ -61,7 +61,8 @@ body a {
   display: -ms-flexbox;
   display: flex;
   background-color: rgba(7, 22, 41, 0.8);
-  width: 100vw;
+  width: 90vw;
+  margin-left: 5vw;
   opacity: 0;
   height: 100px;
   position: fixed;
@@ -399,7 +400,7 @@ body a {
 .about-container .about-content .card .card-content .card-details .degree-icon {
   margin-left: auto;
   margin-right: auto;
-  width: 40%;
+  width: 100px;
   font-size: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
