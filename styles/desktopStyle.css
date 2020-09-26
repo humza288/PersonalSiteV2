@@ -524,6 +524,10 @@ body a {
   margin-top: 40px;
 }
 
+.projects-container .project-cards .card-container .card .card-header .card-title span i {
+  margin-right: 10px;
+}
+
 .projects-container .project-cards .card-container .card .card-header .github-icon {
   width: 20%;
   font-size: 40px;
@@ -611,11 +615,13 @@ body a {
 }
 
 .contact-container .contact-form {
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
   font-family: 'Share Tech', sans-serif;
   width: 80%;
   margin-left: 10%;
-  -webkit-transition: 2s ease-in-out;
-  transition: 2s ease-in-out;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
   opacity: 0;
 }
 

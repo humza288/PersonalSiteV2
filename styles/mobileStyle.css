@@ -131,12 +131,12 @@
     margin: 5px;
   }
   .nav .burger .line-one-active {
-    -webkit-transform: translateY(5px) rotate(45deg);
-            transform: translateY(5px) rotate(45deg);
+    -webkit-transform: translateY(5px) rotate(calc(405deg + 360deg));
+            transform: translateY(5px) rotate(calc(405deg + 360deg));
   }
   .nav .burger .line-two-active {
-    -webkit-transform: translateY(-7px) rotate(-45deg);
-            transform: translateY(-7px) rotate(-45deg);
+    -webkit-transform: translateY(-7px) rotate(calc(315deg + 360deg));
+            transform: translateY(-7px) rotate(calc(315deg + 360deg));
   }
   .main-screen {
     width: 100%;
@@ -266,6 +266,17 @@
     max-width: 480px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .projects-container .project-cards .card-container .card .card-header .card-title {
+    font-size: 16;
+  }
+  .projects-container .project-cards .card-container .card .card-date {
+    font-size: 12;
+  }
+  .contact-form {
+    width: 90vw !important;
+    margin-left: 5vw !important;
+    margin-right: 5vw !important;
   }
   .ball {
     width: 30px !important;

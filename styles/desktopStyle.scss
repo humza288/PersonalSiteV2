@@ -467,6 +467,10 @@ body {
                             float: left;
                             padding-left: 40px;
                             margin-top: 40px;
+
+                            i {
+                                margin-right: 10px;
+                            }
                         }
                         
                     }
@@ -553,10 +557,11 @@ body {
     }
 
     .contact-form {
+        transform: translateY(50px);
         font-family: 'Share Tech', sans-serif;
         width: 80%;
         margin-left: 10%;
-        transition: 2s ease-in-out;
+        transition: 1s ease-in-out;
         opacity: 0;
 
         form {
