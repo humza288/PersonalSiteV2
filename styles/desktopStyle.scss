@@ -121,7 +121,7 @@ body {
                 font-weight: bolder;
                 padding: 5px 20px;
                 color: whitesmoke !important;
-                border-radius: 5px;
+                border-radius: 2px;
             }
 
         }
@@ -275,6 +275,7 @@ body {
 .about-container {
     width: 100%;
     background-color: transparent;
+    margin-bottom: 50px;
 
     .about-header {
         display: flex;
@@ -285,7 +286,8 @@ body {
         .about-text {
             text-align: left;
             padding-bottom: 20px;
-            margin-bottom: 75px;
+            margin-bottom: 125px;
+            margin-top: 0;
             font-size: 60px;
             width: 100%;
             font-weight: bold;
@@ -296,16 +298,12 @@ body {
 
     .about-content {
 
-        .card-one {
-            width: 100%;
+        .education-card {
+            margin-bottom: 75px !important;
         }
 
-        .card-two {
-            flex-direction: row-reverse;
-
-            .card-text {
-                text-align: right !important;
-            }
+        .tools-card {
+            margin-bottom: 125px !important;
         }
 
         .card {
@@ -313,59 +311,35 @@ body {
             opacity: 0;
             transition: all 1s ease-in-out;
             margin: auto;
-            margin-bottom: 50px !important;
-            width: 80%;
-            height: 200px;
+            margin-top: 0;
             font-family: 'Open Sans' !important;
             display: flex;
-
-            .card-text {
-                font-size: 40px;
-                color: white;
-                width: 30%;
-               
-                i {
-                    color: #45A29E;
-                }
-            }
-
-            .card-title {
-                font-size: 30px;
-                color: white;
-                width: 100%;
-                text-align: center;
-            }
 
             .card-content {
                 font-family: 'Open Sans';
                 width:  100%;
-                height: 100px;
-                padding-top: 40px;
-                padding-bottom: 40px;
-                background-color: #010C14;
                 border-radius: 5px;
                 display: flex;
                 flex-direction: row-reverse;
 
                 .card-text {
-                    width: 50%;
-                    text-align: center;
-                    margin-top: 15px;
-
-                    i {
-                        margin-right: 10px;
-                    }
+                    font-size: 30px;
+                    margin-bottom: 10px;
                 }
 
                 .card-details {
-                    width: 50%;
+                    width: 100%;
                     text-align: center;
-                    color: rgba($color:#FFFFFF, $alpha: 0.80);
+                    color: rgba($color:#FFFFFF, $alpha: 1);
                     font-family: 'Open Sans';
-                    font-size: 20px;
+                    font-size: 16px;
+
+                    .frameworks {
+                        color: #45A29E;
+                    }
                     
                     .university-name {
-                        margin-bottom: 15px;
+                        margin-bottom: 10px;
                     }
     
                     .degree-name {
@@ -377,7 +351,7 @@ body {
                         margin-left: auto;
                         margin-right: auto;
                         width: 40%;
-                        font-size: 25px;
+                        font-size: 20px;
                         display: flex;
                         justify-content: space-evenly;
                     }

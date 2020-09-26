@@ -139,7 +139,7 @@ body a {
   font-weight: bolder;
   padding: 5px 20px;
   color: whitesmoke !important;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 .nav .burger {
@@ -308,6 +308,7 @@ body a {
 .about-container {
   width: 100%;
   background-color: transparent;
+  margin-bottom: 50px;
 }
 
 .about-container .about-header {
@@ -325,7 +326,8 @@ body a {
 .about-container .about-header .about-text {
   text-align: left;
   padding-bottom: 20px;
-  margin-bottom: 75px;
+  margin-bottom: 125px;
+  margin-top: 0;
   font-size: 60px;
   width: 100%;
   font-weight: bold;
@@ -333,19 +335,12 @@ body a {
   border-bottom: 1px solid #C5C6C7;
 }
 
-.about-container .about-content .card-one {
-  width: 100%;
+.about-container .about-content .education-card {
+  margin-bottom: 75px !important;
 }
 
-.about-container .about-content .card-two {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-}
-
-.about-container .about-content .card-two .card-text {
-  text-align: right !important;
+.about-container .about-content .tools-card {
+  margin-bottom: 125px !important;
 }
 
 .about-container .about-content .card {
@@ -355,39 +350,16 @@ body a {
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
   margin: auto;
-  margin-bottom: 50px !important;
-  width: 80%;
-  height: 200px;
+  margin-top: 0;
   font-family: 'Open Sans' !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.about-container .about-content .card .card-text {
-  font-size: 40px;
-  color: white;
-  width: 30%;
-}
-
-.about-container .about-content .card .card-text i {
-  color: #45A29E;
-}
-
-.about-container .about-content .card .card-title {
-  font-size: 30px;
-  color: white;
-  width: 100%;
-  text-align: center;
-}
-
 .about-container .about-content .card .card-content {
   font-family: 'Open Sans';
   width: 100%;
-  height: 100px;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #010C14;
   border-radius: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -399,25 +371,24 @@ body a {
 }
 
 .about-container .about-content .card .card-content .card-text {
-  width: 50%;
-  text-align: center;
-  margin-top: 15px;
-}
-
-.about-container .about-content .card .card-content .card-text i {
-  margin-right: 10px;
+  font-size: 30px;
+  margin-bottom: 10px;
 }
 
 .about-container .about-content .card .card-content .card-details {
-  width: 50%;
+  width: 100%;
   text-align: center;
-  color: rgba(255, 255, 255, 0.8);
+  color: white;
   font-family: 'Open Sans';
-  font-size: 20px;
+  font-size: 16px;
+}
+
+.about-container .about-content .card .card-content .card-details .frameworks {
+  color: #45A29E;
 }
 
 .about-container .about-content .card .card-content .card-details .university-name {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .about-container .about-content .card .card-content .card-details .degree-name {
@@ -429,7 +400,7 @@ body a {
   margin-left: auto;
   margin-right: auto;
   width: 40%;
-  font-size: 25px;
+  font-size: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
