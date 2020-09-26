@@ -1,0 +1,43 @@
+.loader {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: #071629;
+}
+
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin-top: 300px;
+}
+
+.ball {
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  margin: 0 10px;
+  
+  animation: 2s bounce ease infinite;
+}
+
+.blue {
+  background-color: white;
+}
+
+.red {
+  background-color: white;
+  animation-delay: .25s;
+}
+
+.yellow {
+  background-color: white;
+  animation-delay: .5s;
+}
+
+.green {
+  background-color: white;
+  animation-delay: .75s;
+}
