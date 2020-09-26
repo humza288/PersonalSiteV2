@@ -7,7 +7,20 @@ app.config(function($locationProvider) {
     });
   });
 
-app.run(function ($rootScope, $timeout) { 
+app.run(function ($rootScope, $timeout, $http) { 
+
+    let request = {
+        method: 'GET', 
+        url: 'https://api.github.com/repos/humza288/humza288.github.io/commits', 
+        headers: {
+        }
+    }
+
+    $http(request).then(function(response) {
+        $rootScope.commitCount = response.data.length;
+    });
+
+
     $rootScope.lockScroll = true
     $rootScope.isLoading = true
     $rootScope.showBoxShadow = true
@@ -53,12 +66,14 @@ app.controller('navCtrl', function($rootScope, $scope, $timeout, $location) {
         }, 1000);  
     }
 
-    $scope.toggleMenu = function(e) {
+    $scope.toggleMenu = function(burger = false) {
         $rootScope.lockScroll = !$rootScope.lockScroll
         $scope.isActive = !$scope.isActive
-        $timeout(function () {
-            document.getElementById("navbar").style.top = "-100";
-        }, 1000);
+        if (!burger) {
+            $timeout(function () {
+                document.getElementById("navbar").style.top = "-100";
+            }, 1000);
+        }   
     }
   });
 

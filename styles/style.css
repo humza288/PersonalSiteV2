@@ -705,6 +705,19 @@ footer .github-view {
   text-decoration: underline;
 }
 
+footer .commit-count {
+  color: #C5C6C7;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+footer .commit-count img {
+  color: white;
+  width: 20px;
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+}
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;

@@ -672,6 +672,18 @@ footer {
         text-decoration: underline;
     }
 
+    .commit-count {
+        color: #C5C6C7;
+        font-size: 20px;
+        font-weight: bold;
+
+        img {
+            color: white;
+            width: 20px;
+            transform: translateY(3px);
+        }
+    }
+
 }
 
 @keyframes fadeIn {

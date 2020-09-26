@@ -28,9 +28,9 @@
     <div id="navbar" ng-class="{'nav-displayed': isActive, 'fade': !isLoading, boxShadow: showBoxShadow}" class="nav" ng-controller="navCtrl">
         <div ng-class="{'menu': !isActive, 'menu-displayed': isActive}">
             <ul>
-                <a href="#about" ng-click="toggleMenu($event)"><li>About</li></a>
-                <a href="#projects" ng-click="toggleMenu($event)"><li>Projects</li></a>
-                <a href="#contact" ng-click="toggleMenu($event)"><li>Contact</li></a>
+                <a href="#about" ng-click="toggleMenu(false)"><li>About</li></a>
+                <a href="#projects" ng-click="toggleMenu(false)"><li>Projects</li></a>
+                <a href="#contact" ng-click="toggleMenu(false)"><li>Contact</li></a>
                 <a href="https://docs.google.com/document/d/1agnl-3-RmlTlGe2BXKE3tLZMdfBm4iiI-AFq5eKGiVM/export?format=pdf" ng-click="toggleMenu($event)"><li class="cv">CV</li></a>
             </ul>
         </div>
@@ -46,7 +46,7 @@
                 <a href="https://docs.google.com/document/d/1agnl-3-RmlTlGe2BXKE3tLZMdfBm4iiI-AFq5eKGiVM/export?format=pdf"><li class="cv">CV</li></a>
             </ul>
         </div>
-        <div class="burger activated" ng-click="toggleMenu($event)">
+        <div class="burger activated" ng-click="toggleMenu(true)">
             <div ng-class="{'line-one-active': isActive, 'line-one': !isActive}"></div>
             <div ng-class="{'line-two-active': isActive, 'line-two': !isActive}"></div>
         </div>
@@ -269,6 +269,10 @@
         <span class="copyright">© Humza Munir - 2020</span>
         <br> <br>
         <a href="https://github.com/humza288/PersonalSiteV2"><span class="github-view">View on GitHub</span></a>
+        <br><br>
+        <span class="commit-count">{{commitCount}} <img src="/assets/commit.png" alt=""></span>
+       
+
     </footer>
 
 
