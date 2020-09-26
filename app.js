@@ -43,7 +43,7 @@ app.run(function ($rootScope, $timeout, $http) {
             
         }, 300);
 
-    }, 1000);
+    }, 2500);
 
     
 
