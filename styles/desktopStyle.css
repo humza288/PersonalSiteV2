@@ -1,6 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Share+Tech&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Ubuntu:wght@700&display=swap");
 html {
   scroll-behavior: smooth;
+}
+
+.more {
+  display: none;
 }
 
 .disabled {
@@ -11,8 +15,8 @@ html {
 
 body {
   margin: 0;
-  background-color: #081E3B;
-  font-family: "Helvetica Neue";
+  background-color: #071629;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 body a {
@@ -50,7 +54,7 @@ body a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: rgba(8, 30, 59, 0.8);
+  background-color: rgba(7, 22, 41, 0.8);
   width: 100vw;
   opacity: 0;
   height: 100px;
@@ -169,7 +173,6 @@ body a {
   display: flex;
   width: 100%;
   height: calc(100% - 300px);
-  background-color: #081E3B;
 }
 
 .main-screen .main-screen-content .sqaures {
@@ -177,7 +180,6 @@ body a {
   margin-right: 5%;
   margin-left: 5%;
   height: calc(100% - 80px);
-  background-color: #081E3B;
   padding-top: 80px;
 }
 
@@ -357,12 +359,12 @@ body a {
 }
 
 .about-container .about-content .card .card-content {
-  font-family: 'Share Tech', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   width: 70%;
   height: 100px;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #19191C;
+  background-color: #161617;
   border-radius: 5px;
   -webkit-box-shadow: 3px 7px 11px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 3px 7px 11px 0px rgba(0, 0, 0, 0.75);
@@ -414,6 +416,28 @@ body a {
   margin-bottom: 100px;
 }
 
+.projects-container button {
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  height: 50px;
+  width: 150px;
+  margin-top: 50px;
+  margin-left: calc((100% - 150px)/2);
+  background-color: transparent;
+  border: 5px solid #66FCF1;
+  border-radius: 2px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #66FCF1;
+  cursor: pointer;
+  outline: none;
+}
+
+.projects-container button:hover {
+  color: white;
+  border-color: white;
+}
+
 .projects-container .projects-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -441,131 +465,119 @@ body a {
 
 .projects-container .project-cards {
   width: 100%;
+  margin-top: 50px;
 }
 
-.projects-container .project-cards .card {
+.projects-container .project-cards .card-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 480px 480px;
+      grid-template-columns: 480px 480px;
+  grid-auto-rows: 320px;
+  grid-gap: 30px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+}
+
+.projects-container .project-cards .card-container .card {
+  font-family: 'Ubuntu', sans-serif;
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
   opacity: 0;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-  margin: auto;
-  margin-top: 50px !important;
-  margin-bottom: 50px !important;
   width: 100%;
-  height: 300px;
-}
-
-.projects-container .project-cards .card .card-content {
-  padding: 10px;
-  font-family: 'Share Tech', sans-serif;
-  width: 75%;
-  height: 200px;
-  margin: auto;
-  background-color: #19191C;
-  border-radius: 2px;
-  -webkit-box-shadow: 3px 7px 11px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 3px 7px 11px 0px rgba(0, 0, 0, 0.75);
-}
-
-.projects-container .project-cards .card .card-content .card-date {
-  width: 100%;
-  text-align: right;
-}
-
-.projects-container .project-cards .card .card-content .card-date p {
-  margin: 0;
-  margin-top: 10px;
-  margin-right: 20px;
-  color: #66fcf2;
-}
-
-.projects-container .project-cards .card .card-content .card-title {
-  font-size: 40px;
-  font-weight: bold;
-  color: white;
-  width: 50%;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.projects-container .project-cards .card .card-content .github-link {
-  text-align: center;
-  width: 50%;
-  margin-bottom: 20px;
-}
-
-.projects-container .project-cards .card .card-content .github-link a {
-  font-size: 30px;
-  color: #45A29E;
-  text-decoration: underline;
-}
-
-.projects-container .project-cards .card .card-content .used-tech {
-  list-style: none;
+  height: 100%;
+  background-color: #010c14;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 0;
-  width: 50%;
-}
-
-.projects-container .project-cards .card .card-content .used-tech .tool {
-  padding: 5px 15px 5px 15px;
-  background-color: white;
-  font-size: 12;
-  color: #45A29E;
-  border-radius: 2px;
-  border: 2px solid #66FCF1;
-  margin-right: 3px;
-  margin-left: 3px;
-}
-
-.projects-container .project-cards .card .card-picture {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-clip: content-box;
-  width: 40%;
-  margin-left: 52%;
-  -webkit-transform: translateY(-150px);
-          transform: translateY(-150px);
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   border-radius: 2px;
 }
 
-.projects-container .project-cards .card .card-picture .card-picture-filter {
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-  font-family: 'Share Tech', sans-serif;
-  background-color: rgba(11, 12, 16, 0.47);
-  width: 100%;
-  height: 100%;
-  border-radius: 2px;
-  opacity: 1;
-  color: white;
-  border: 5px solid #45A29E;
-  text-align: left;
+.projects-container .project-cards .card-container .card .card-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(20% - 20px);
+}
+
+.projects-container .project-cards .card-container .card .card-header .card-title {
+  width: 80%;
+  font-size: 20px;
   font-weight: bold;
+  color: #66FCF1;
 }
 
-.projects-container .project-cards .card .card-picture .card-picture-filter .details {
-  padding: 20px;
+.projects-container .project-cards .card-container .card .card-header .card-title span {
+  float: left;
+  padding-left: 40px;
+  margin-top: 40px;
 }
 
-.projects-container .project-cards .card .card-picture .card-picture-filter .details .details-header {
-  font-size: 30px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+.projects-container .project-cards .card-container .card .card-header .github-icon {
+  width: 20%;
+  font-size: 40px;
+  color: white;
+}
+
+.projects-container .project-cards .card-container .card .card-header .github-icon i {
+  float: right;
+  padding-right: 40px;
+  margin-top: 28px;
+}
+
+.projects-container .project-cards .card-container .card .card-header .github-icon i:hover {
+  color: #66FCF1 !important;
+}
+
+.projects-container .project-cards .card-container .card .card-text {
+  font-family: 'Open Sans';
+  height: calc(80% - 80px);
+  width: 100%;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.projects-container .project-cards .card-container .card .card-text p {
+  margin: 40px;
+  margin-top: 40px;
+}
+
+.projects-container .project-cards .card-container .card .card-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 40px;
+  font-size: 14;
+}
+
+.projects-container .project-cards .card-container .card .card-footer .card-date {
   color: #45A29E;
+}
+
+.projects-container .project-cards .card-container .card .card-footer .card-date .technology {
+  margin-right: 10px;
+}
+
+.projects-container .project-cards .card-container .card .card-footer .card-date .technology i {
+  margin-right: 2px;
+}
+
+.projects-container .project-cards .card-container .card:hover {
+  -webkit-transform: scale(1.05, 1.05) !important;
+          transform: scale(1.05, 1.05) !important;
 }
 
 .contact-container {

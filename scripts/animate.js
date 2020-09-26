@@ -11,8 +11,17 @@ let observer = new IntersectionObserver((enteries) => {
     })
 })
 
+let observerTranslate = new IntersectionObserver((enteries) => {
+    enteries.forEach(entry => {
+        if(entry.intersectionRatio > 0) {
+            entry.target.style.transform = "translateY(0px)"
+            entry.target.style.opacity = '1';  
+        }
+    })
+})
+
 cards.forEach(card => {
-    observer.observe(card);
+    observerTranslate.observe(card);
 })
 
 forms.forEach(form => {

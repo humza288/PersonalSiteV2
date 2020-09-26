@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Ubuntu:wght@700&display=swap');
 
 html{
     scroll-behavior: smooth;
+}
+
+.more {
+    display: none;
 }
 
 .disabled {
@@ -12,8 +16,8 @@ html{
 
 body {
     margin: 0;
-    background-color: #081E3B;
-    font-family: "Helvetica Neue";
+    background-color: #071629;
+    font-family: 'Ubuntu', sans-serif;
 
     a {
         text-decoration: none;
@@ -48,7 +52,7 @@ body {
     transition: 0.2s ease-in-out;
     animation-delay: 2.5s;
     display: flex;
-    background-color: rgba($color: #081E3B, $alpha: 0.80);
+    background-color: rgba($color: #071629, $alpha: 0.80);
     width: 100vw;
     opacity: 0;
     height: 100px;
@@ -154,17 +158,14 @@ body {
         display: flex;
         width: 100%;
         height: calc(100% - 300px);
-        background-color: #081E3B;
 
         .sqaures {
             width: 40%;
             margin-right: 5%;
             margin-left: 5%;
             height: calc(100% - 80px);
-            background-color: #081E3B;
             padding-top: 80px;  
             
-
             div {
                 border-radius: 5px;
                 margin-left: calc((100% - 350px) / 2);
@@ -324,12 +325,12 @@ body {
             }
 
             .card-content {
-                font-family: 'Share Tech', sans-serif;
+                font-family: 'Ubuntu', sans-serif;
                 width:  70%;
                 height: 100px;
                 padding-top: 40px;
                 padding-bottom: 40px;
-                background-color: #19191C;
+                background-color: #161617;
                 border-radius: 5px;
                 -webkit-box-shadow: 3px 7px 11px 0px rgba(0,0,0,0.75);
                 -moz-box-shadow: 3px 7px 11px 0px rgba(0,0,0,0.75);
@@ -382,6 +383,28 @@ body {
     //background-color: red;
     margin-bottom: 100px;
 
+    button {
+        transition: 0.5s ease-in-out;
+        height: 50px;
+        width: 150px;
+        margin-top: 50px;
+        margin-left: calc((100% - 150px)/2);
+        background-color: transparent;
+        border: 5px solid #66FCF1;
+        border-radius: 2px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #66FCF1;
+        cursor: pointer;
+        outline: none;
+        
+    }
+
+    button:hover {
+        color: white;
+        border-color: white;
+    }
+
     .projects-header {
         display: flex;
         flex-direction: column;
@@ -404,127 +427,104 @@ body {
 
     .project-cards {
         width: 100%;
+        margin-top: 50px;
 
-        .card {
-            opacity: 0;
-            transition: all 1s ease-in-out;
+        .card-container {
+            display: grid;
+            grid-template-columns: 480px 480px;
+            grid-auto-rows: 320px;
+            grid-gap: 30px;
+            width: fit-content;
             margin: auto;
-            margin-top: 50px !important;
-            margin-bottom: 50px !important;
-            width: 100%;
+            
+            .card {
+                font-family: 'Ubuntu', sans-serif;                
+                transition: 0.8s ease-in-out;
+                transform: translateY(50px);
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                background-color:#010c14;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                // -webkit-box-shadow: 3px 7px 11px 0px rgba(0,0,0,0.75);
+                // -moz-box-shadow: 3px 7px 11px 0px rgba(0,0,0,0.75);
+                // box-shadow: 3px 7px 11px 0px rgba(0,0,0,0.75);
+                border-radius: 2px;
 
-            height: 300px;
-
-            .card-content {
-                
-                .card-date {
-                    width: 100%;
-                    text-align: right;
-
-                    p {
-                        margin: 0;
-                        margin-top: 10px;
-                        margin-right: 20px;
-                        color: #66fcf2;
-                    }
-                }
-                
-                .card-title {
-                    font-size: 40px;
-                    font-weight: bold;
-                    color: white;
-                    width: 50%;
-                    text-align: center;
-                    margin-top: 10px;
-                    margin-bottom: 10px;
-                }
-
-                .github-link {
-                    a {
-                        font-size: 30px;
-                        color: #45A29E;
-                        text-decoration: underline;          
-                    }
-
-                    text-align: center;  
-                    width: 50%;
-                    margin-bottom: 20px;
-                }
-
-                .used-tech {
-                    list-style: none;
+                .card-header {
                     display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    padding: 0;
-                    width: 50%;
+                    height: calc(20% - 20px);
                     
-                    .tool {
-                        padding: 5px 15px 5px 15px;
-                        background-color: white;
-                        font-size: 12;
-                        color: #45A29E;
-                        border-radius: 2px;
-                        border: 2px solid #66FCF1;
-                        margin-right: 3px;
-                        margin-left: 3px;
+                    .card-title {
+                        width: 80%;
+                        font-size: 20px;
+                        font-weight: bold;
+                        color: #66FCF1;
+                        
+                        span {
+                            float: left;
+                            padding-left: 40px;
+                            margin-top: 40px;
+                        }
+                        
                     }
-                }
 
-                padding: 10px;
-                font-family: 'Share Tech', sans-serif;
-                width:  75%;
-                height: 200px;
-                margin: auto;
-                background-color: #19191C;
-                border-radius: 2px;
-                -webkit-box-shadow: 3px 7px 11px 0px rgba(0,0,0,0.75);
-                -moz-box-shadow: 3px 7px 11px 0px rgba(0,0,0,0.75);
-                box-shadow: 3px 7px 11px 0px rgba(0,0,0,0.75);
+                    .github-icon {
+                        width: 20%;
+                        font-size: 40px;
+                        color: white;
 
-            }
-
-            .card-picture {
-
-                height: fit-content;
-                background-position: center; 
-                background-repeat: no-repeat; 
-                background-size: cover; 
-                background-clip: content-box;
-                //background-color:rgba(102, 252, 242, 0.47);
-                width: 40%;
-                margin-left: 52%;
-                transform: translateY(-150px);
-                border-radius: 2px;
-
-                .card-picture-filter {
-                    transition: 0.5s ease-in-out;
-                    font-family: 'Share Tech', sans-serif;
-                    background-color: rgba(11, 12, 16, 0.47);
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 2px;
-                    opacity: 1;
-                    color: white;
-                    border: 5px solid #45A29E;
-                    text-align: left;
-                    font-weight: bold;
-
-                    .details {
-
-                        .details-header {
-                            font-size: 30px;
-                            margin-top: 10px;
-                            margin-bottom: 10px;
-                            color: #45A29E;
+                        i {
+                            float: right;
+                            padding-right: 40px;
+                            margin-top: 28px;
                         }
 
-                        padding: 20px;
+                        i:hover {
+                            color: #66FCF1 !important;
+                        }
                     }
+                }
 
+                .card-text {
+                    font-family: 'Open Sans';
+                    height: calc(80% - 80px);
+                    width: 100%; 
+                    color: rgba($color:#FFFFFF, $alpha: 0.80);
+
+                    p {
+                        margin: 40px;
+                        margin-top: 40px;
+                    }
+                }
+
+                .card-footer {
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 40px;
+                    font-size: 14;
+
+                    .card-date {
+                        color: #45A29E;
+
+                        .technology {
+                            margin-right: 10px;
+
+                            i {
+                                margin-right: 2px;
+                            }
+                        }
+                    }
                 }
             }
+
+            .card:hover {
+                transform: scale(1.05, 1.05) !important;
+            }
         }
+
     }
 }
 

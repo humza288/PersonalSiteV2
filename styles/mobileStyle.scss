@@ -297,45 +297,20 @@
         }
     
         .project-cards {
-            .card {
-                width: 90% !important;
-                padding: 5%;
-                height: fit-content;
-                margin-top: 0 !important;
-
-                .card-content {
-
-                    width: calc(100% - 20px) !important;
-        
-                    .card-title {
-                        width: 100%;
-                    }
-    
-                    .github-link {
-                        width: 100%;
-                    }
-    
-                    .used-tech {
-                        width: 80%;
-                        margin: auto;
-                    }
-                }
-
-                .card-picture {
+            
+            
+            .card-container {
+                grid-template-columns: 90vw !important;
+                grid-auto-rows: minmax(350px, auto);
+                grid-gap: 0px;
+                grid-row-gap: 30px;
+                
+                .card {
+                    max-width: 480px;
                     margin-left: auto;
-                    margin-right: auto;;
-                    height: fit-content;
-                    border-radius: 0 0 10px 10px;
-                    width: 90%;
-                    transform: none;
-                    transform: translateX(-5px) !important;
-
-                    .card-picture-filter {
-                        border-radius: 0 0 10px 10px;
-                        border-top: none;
-                    }
-
+                    margin-right: auto;
                 }
+
             }
         }
     }

@@ -30,7 +30,7 @@ app.run(function ($rootScope, $timeout, $http) {
     $timeout(function () {
         $rootScope.isLoading = false;
         $rootScope.lockScroll = false
-    }, 3000);
+    }, 2);
 
     $rootScope.showBoxShadow = false
 
