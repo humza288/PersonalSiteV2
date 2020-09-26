@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./styles/mobileStyle.css">
     <link rel="stylesheet" href="./styles/animations.css">
     <link rel="stylesheet" href="./styles/loader.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <link rel="icon" type="image/png" href="/assets/profile.jpg" sizes="32x32">
     <!--IMPORT ANGULARJS-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
@@ -57,20 +57,14 @@
 
     <div class="container" id="home">
         <div class="main-screen">
-            <div class="hello-text">
-                <span class="hello-one">Hi, </span> <span class="hello-two">I'm Humza.</span>
-            </div>
             <div class="main-screen-content">
-                <div class="sqaures" ng-if="!lockScroll">
-                    <div class="square-one"></div>
-                    <div class="square-two"></div>
-                    <div class="square-three"></div>
-                    <div class="square-filter"></div>
-                </div>
                 <div class="details">
-                    <div class="details-text">
+                    <div class="hello-text" ng-class="{'fadeDown': !isLoading}">
+                        <span class="hello-one">Hi, </span> <span class="hello-two">I'm Humza.</span>
+                    </div>
+                    <div class="details-text" ng-class="{'fadeDown': showText}">
                         <p>
-                            Hello, I am a student at the <a href="https://uci.edu">
+                            I am a student at the <a href="https://uci.edu">
                             <span class="university-name">University of California, Irvine</span></a> pursuing a 
                             Bachelor’s Degree, in Computer Science. When not busy with my 
                             schoolwork I like to build my Skillset in full stack development, 
@@ -78,11 +72,17 @@
                             out as I am currently looking for opportunities.
                         </p>
                     </div>
-                    <div class="details-icons">
-                        <a href="https://www.github.com/humza288"><i class="fa fa-github" style="font-size:48px;"></i></a>
-                        <a href="https://www.linkedin.com/in/humzamunir"><i class="fa fa-linkedin" style="font-size:48px;"></i></a>
-                        <a href="mailto:humza288@gmail.com"><i class="fa fa-envelope" style="font-size:48px;"></i></a>
+                    <div class="details-icons" ng-class="{'fadeDown': showIcons}">
+                        <a href="https://www.github.com/humza288"><i class="fab fa-github" style="font-size:48px;"></i></a>
+                        <a href="https://www.linkedin.com/in/humzamunir"><i class="fab fa-linkedin-in" style="font-size:48px;"></i></a>
+                        <a href="mailto:humza288@gmail.com"><i class="fas fa-envelope" style="font-size:48px;"></i></a>
                     </div>
+                </div>
+                <div class="sqaures" ng-if="!lockScroll">
+                    <div class="square-one"></div>
+                    <div class="square-two"></div>
+                    <div class="square-three"></div>
+                    <div class="square-filter"></div>
                 </div>
             </div>
         </div>
@@ -92,67 +92,20 @@
             </div>
             <div class="about-content">
                 <div class="card card-one education-card">
-                    <div class="card-text">Education <i class="fa fa-caret-right"></i></div>
                     <div class="card-content">
-                        <span class="university-name">
-                            University of California, Irvine
-                        </span>
-                        <br>
-                        <br>
-                        <span class="degree-name">
-                            B.S. Computer Science - 2021
-                        </span>
-                    </div>
-                </div>
-                <div class="card card-two skills-card" style="height: 240px;" >
-                    <div class="card-text"> <i class="fa fa-caret-left"></i> Skills</div>
-                    <div class="card-content" style="height: 140px;">
-                        <div class="card-title">
-                            Languages
-                        </div>
-                        <div class="skills-list">
-                            <ul>
-                                <li>Python</li>
-                                <li>C++</li>
-                                <li>C#</li>
-                                <li>Java</li>
-                                <li>SQL</li>
-                            </ul>
-                            <ul>
-                                <li>JavaScript</li>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="card card-one">
-                    <div class="card-text"></div>
-                    <div class="card-content">
-                        <div class="card-title">
-                            Tools / Frameworks
-                        </div>
-                        <div class="skills-list">
-                            <ul>
-                                <li>AngularJS</li>
-                                <li>Asp.NET</li>
-                                <li>Django</li>
-                                <li>React</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="card card-two">
-                    <div class="card-text"></div>
-                    <div class="card-content">
-                        <div class="card-title">
-                            Methodologies
-                        </div>
-                        <div class="skills-list">
-                            <ul>
-                                <li>Agile</li>
-                                <li>Scrum</li>
-                            </ul>
+                        <div class="card-text"><i class="fa fa-graduation-cap"></i>Education</div>
+                        <div class="card-details">
+                            <div class="university-name">
+                                University of California, Irvine
+                            </div>
+                            <div class="degree-name">
+                                B.S. Computer Science 2021
+                            </div>
+                            <div class="degree-icon">
+                                <i class="fas fa-laptop-code"></i>
+                                <i class="fa fa-award"></i>
+                                <i class="fas fa-school"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -272,9 +225,9 @@
                 <form name="form" action="https://formspree.io/mzbkbwba" method="POST">
                     <label for="">Email</label>
                     <input type="email" ng-model="_replyto" name="_replyto" placeholder="Enter your email..." ng-class="{invalid: !form._replyto.$valid && form._replyto.$dirty}" required>
-                    <label for="">Phone Number</label>
+                    <label class="change-padding" for="">Phone Number</label>
                     <input type="telephone" name="telephone" id="telephone" mask="(999) 999-9999" clean="true" ng-model="phone" placeholder="Enter your phone number..." ng-class="{'invalid': phone.length < 10 || (!phone.length && form.telephone.$dirty)}" required>
-                    <label for="">Message</label>
+                    <label class="change-padding" for="">Message</label>
                     <textarea name="message" ng-model="message" cols="30" rows="10" placeholder="Enter at least a 10 character message..." ng-class="{invalid: message.length < 10 || (!message.length && form.message.$dirty)}" required></textarea>
                     <button type="submit" ng-click="reset()" ng-class="{disabled: !form.$valid || phone.length < 10 || message.length < 10}">Send</button>
                 </form>
@@ -283,13 +236,15 @@
     </div>
     
     <footer>
-        <span class="copyright">© Humza Munir - 2020</span>
-        <br> <br>
-        <a href="https://github.com/humza288/PersonalSiteV2"><span class="github-view">View on GitHub</span></a>
+        <span class="copyright">© Humza Munir 2020</span>
         <br><br>
-        <span class="commit-count">{{commitCount}} <img src="/assets/commit.png" alt=""></span>
-       
-
+        <span class="commit-count">
+            <a href="https://github.com/humza288/PersonalSiteV2">
+                 <i class="fab fa-github"></i>
+            </a>
+             | {{commitCount}} 
+            <img src="/assets/commit.png" alt="">
+        </span>
     </footer>
 
 

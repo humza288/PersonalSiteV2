@@ -22,15 +22,30 @@ app.run(function ($rootScope, $timeout, $http) {
     $rootScope.lockScroll = true
     $rootScope.isLoading = true
     $rootScope.showBoxShadow = true
+    $rootScope.showText = false
+    $rootScope.showIcon = false
 
     $rootScope.stopLoading = function() {
         $rootScope.isLoading = false
     }
 
     $timeout(function () {
-        $rootScope.isLoading = false;
+        $rootScope.isLoading = false
         $rootScope.lockScroll = false
-    }, 2);
+
+        $timeout(function () {
+            $rootScope.showText = true
+
+
+            $timeout(function () {
+                $rootScope.showIcons = true
+            }, 300);
+            
+        }, 300);
+
+    }, 3000);
+
+    
 
     $rootScope.showBoxShadow = false
 

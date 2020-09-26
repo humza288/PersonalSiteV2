@@ -28,6 +28,12 @@ body a {
   opacity: 1 !important;
 }
 
+.fadeDown {
+  opacity: 1 !important;
+  -webkit-transform: translateY(0) !important;
+          transform: translateY(0) !important;
+}
+
 .invalid {
   border: 2px solid red !important;
   border-color: red !important;
@@ -107,14 +113,17 @@ body a {
   margin-top: 40;
 }
 
+.nav .links ul a:hover {
+  color: #45A29E;
+}
+
 .nav .links ul li {
   color: #C5C6C7;
-  font-family: 'Share Tech', sans-serif;
+  font-family: 'Open Sans';
   font-size: 20;
   font-weight: bolder;
   padding-right: 15px;
   padding-left: 15px;
-  border-right: 3px solid #C5C6C7;
   margin: 5px 0px;
 }
 
@@ -148,14 +157,19 @@ body a {
 }
 
 .main-screen .hello-text {
+  -webkit-transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+          transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+  opacity: 0.5;
   width: 100%;
-  height: 100px;
-  text-align: center;
+  text-align: left;
 }
 
 .main-screen .hello-text span {
   font-size: 60;
-  font-family: "Helvetica Neue";
   font-weight: bold;
 }
 
@@ -176,11 +190,11 @@ body a {
 }
 
 .main-screen .main-screen-content .sqaures {
-  width: 40%;
-  margin-right: 5%;
-  margin-left: 5%;
+  display: none;
+  width: 50%;
   height: calc(100% - 80px);
-  padding-top: 80px;
+  margin-left: 10vw;
+  margin-top: px;
 }
 
 .main-screen .main-screen-content .sqaures div {
@@ -203,8 +217,8 @@ body a {
   width: 350px;
   height: 350px;
   background-color: #45A29E;
-  -webkit-transform: translateY(-335px) translateX(-15px);
-          transform: translateY(-335px) translateX(-15px);
+  -webkit-transform: translateY(-335px);
+          transform: translateY(-335px);
   opacity: 75%;
 }
 
@@ -215,8 +229,8 @@ body a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  -webkit-transform: translateY(-670px) translateX(-30px);
-          transform: translateY(-670px) translateX(-30px);
+  -webkit-transform: translateY(-670px) translateX(-10px);
+          transform: translateY(-670px) translateX(-10px);
 }
 
 .main-screen .main-screen-content .sqaures .square-filter {
@@ -224,8 +238,8 @@ body a {
   height: 345px;
   background-color: #66FCF1;
   opacity: 15%;
-  -webkit-transform: translateY(-1015px) translateX(-30px);
-          transform: translateY(-1015px) translateX(-30px);
+  -webkit-transform: translateY(-1015px) translateX(-10px);
+          transform: translateY(-1015px) translateX(-10px);
 }
 
 .main-screen .main-screen-content .sqaures .square-filter:hover {
@@ -235,6 +249,8 @@ body a {
 }
 
 .main-screen .main-screen-content .details {
+  margin-left: 75px;
+  margin-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -243,18 +259,23 @@ body a {
       -ms-flex-direction: column;
           flex-direction: column;
   height: calc(100% - 200px);
-  padding-top: 175px;
   width: 50%;
   font-size: 20;
-  margin-left: 5%;
-  margin-right: 2.5%;
-  font-family: 'Share Tech', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .main-screen .main-screen-content .details .details-text {
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+          transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+  opacity: 0;
+  -ms-flex-line-pack: left;
+      align-content: left;
   width: 100%;
+  margin-top: 25px;
   color: #C5C6C7;
 }
 
@@ -263,14 +284,17 @@ body a {
 }
 
 .main-screen .main-screen-content .details .details-icons {
-  width: 75% !important;
-  margin-left: 12.5% !important;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  opacity: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  width: 50%;
+  margin-top: 25px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .main-screen .main-screen-content .details .details-icons i {
@@ -299,19 +323,18 @@ body a {
 }
 
 .about-container .about-header .about-text {
-  text-align: center;
-  margin: auto;
+  text-align: left;
   padding-bottom: 20px;
-  margin-bottom: 100px;
+  margin-bottom: 75px;
   font-size: 60px;
-  width: 350px;
+  width: 100%;
   font-weight: bold;
   color: #66FCF1;
-  border-bottom: 7px solid white;
+  border-bottom: 1px solid #C5C6C7;
 }
 
-.about-container .about-content .card-one .card-text {
-  text-align: left;
+.about-container .about-content .card-one {
+  width: 100%;
 }
 
 .about-container .about-content .card-two {
@@ -326,14 +349,16 @@ body a {
 }
 
 .about-container .about-content .card {
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
   opacity: 0;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
   margin: auto;
-  margin-top: 50px !important;
   margin-bottom: 50px !important;
   width: 80%;
   height: 200px;
+  font-family: 'Open Sans' !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -341,79 +366,81 @@ body a {
 
 .about-container .about-content .card .card-text {
   font-size: 40px;
-  font-weight: bold;
   color: white;
   width: 30%;
 }
 
 .about-container .about-content .card .card-text i {
-  color: #66FCF1;
+  color: #45A29E;
 }
 
 .about-container .about-content .card .card-title {
   font-size: 30px;
-  font-weight: bold;
   color: white;
   width: 100%;
   text-align: center;
 }
 
 .about-container .about-content .card .card-content {
-  font-family: 'Ubuntu', sans-serif;
-  width: 70%;
+  font-family: 'Open Sans';
+  width: 100%;
   height: 100px;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #161617;
+  background-color: #010C14;
   border-radius: 5px;
-  -webkit-box-shadow: 3px 7px 11px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 3px 7px 11px 0px rgba(0, 0, 0, 0.75);
-}
-
-.about-container .about-content .card .card-content .university-name {
-  margin-left: 20%;
-  font-size: 25;
-  font-weight: bold;
-  color: #45A29E;
-}
-
-.about-container .about-content .card .card-content .degree-name {
-  margin-right: 20%;
-  font-size: 25;
-  float: right;
-  font-weight: bold;
-  color: #C5C6C7;
-}
-
-.about-container .about-content .card .card-content .skills-list ul {
-  list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 0;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 
-.about-container .about-content .card .card-content .skills-list ul li {
-  padding: 5px 15px 5px 15px;
-  background-color: white;
-  font-size: 16;
+.about-container .about-content .card .card-content .card-text {
+  width: 50%;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.about-container .about-content .card .card-content .card-text i {
+  margin-right: 10px;
+}
+
+.about-container .about-content .card .card-content .card-details {
+  width: 50%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Open Sans';
+  font-size: 20px;
+}
+
+.about-container .about-content .card .card-content .card-details .university-name {
+  margin-bottom: 15px;
+}
+
+.about-container .about-content .card .card-content .card-details .degree-name {
+  margin-bottom: 20px;
   color: #45A29E;
-  border-radius: 5px;
-  border: 2px solid #66FCF1;
-  margin-right: 3px;
-  margin-left: 3px;
+}
+
+.about-container .about-content .card .card-content .card-details .degree-icon {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  font-size: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .projects-container {
   width: 100%;
-  margin-bottom: 100px;
+  margin-bottom: 75px;
 }
 
 .projects-container button {
@@ -451,21 +478,19 @@ body a {
 }
 
 .projects-container .projects-header .projects-text {
-  text-align: center;
-  margin: auto;
+  text-align: left;
   padding-bottom: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 75px;
+  margin-top: 0;
   font-size: 60px;
-  width: 350px;
-  max-width: 100%;
+  width: 100%;
   font-weight: bold;
   color: #66FCF1;
-  border-bottom: 7px solid white;
+  border-bottom: 1px solid #C5C6C7;
 }
 
 .projects-container .project-cards {
   width: 100%;
-  margin-top: 50px;
 }
 
 .projects-container .project-cards .card-container {
@@ -587,7 +612,7 @@ body a {
 .contact-container {
   width: 100%;
   background-color: transparent;
-  margin-bottom: 100px;
+  margin-bottom: 75px;
 }
 
 .contact-container .contact-header {
@@ -603,21 +628,21 @@ body a {
 }
 
 .contact-container .contact-header .contact-text {
-  text-align: center;
-  margin: auto;
+  text-align: left;
   padding-bottom: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 75px;
+  margin-top: 0;
   font-size: 60px;
-  width: 350px;
+  width: 100%;
   font-weight: bold;
   color: #66FCF1;
-  border-bottom: 7px solid white;
+  border-bottom: 1px solid #C5C6C7;
 }
 
 .contact-container .contact-form {
   -webkit-transform: translateY(50px);
           transform: translateY(50px);
-  font-family: 'Share Tech', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   width: 80%;
   margin-left: 10%;
   -webkit-transition: 1s ease-in-out;
@@ -639,19 +664,22 @@ body a {
   font-size: 25px;
   color: white;
   font-weight: bold;
-  padding-bottom: 15px;
-  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+.contact-container .contact-form form .change-padding {
+  padding-top: 35px;
 }
 
 .contact-container .contact-form form input {
+  font-family: 'Open Sans';
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   height: 60px;
   background-color: rgba(11, 12, 16, 0.47);
   border-radius: 2px;
   color: white;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 15px;
   padding: 20px;
   border: 2px solid transparent;
 }
@@ -662,6 +690,8 @@ body a {
 }
 
 .contact-container .contact-form form textarea {
+  font-weight: bold;
+  font-family: 'Open Sans';
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   height: 300px;
@@ -671,9 +701,7 @@ body a {
   border: 2px solid transparent;
   border-radius: 2px;
   color: white;
-  font-family: Helvetica;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 15px;
   padding: 20px;
 }
 
@@ -685,14 +713,14 @@ body a {
 .contact-container .contact-form form button {
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
-  height: 70px;
-  width: 250px;
+  height: 50px;
+  width: 150px;
   margin: auto;
   margin-top: 40px;
   background-color: transparent;
-  border: 5px solid #66FCF1;
+  border: 2px solid #66FCF1;
   border-radius: 2px;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
   color: #66FCF1;
   cursor: pointer;
@@ -705,35 +733,38 @@ body a {
 }
 
 footer {
-  font-family: 'Share Tech', sans-serif;
+  font-family: 'Open Sans';
   background-color: rgba(0, 0, 0, 0.513);
   width: 100%;
-  height: 150px;
+  height: 100px;
+  font-size: 15px;
   padding-top: 50px !important;
   text-align: center;
 }
 
 footer .copyright {
   color: #C5C6C7;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 footer .github-view {
-  font-size: 20px;
+  font-size: 15px;
   color: #66FCF1;
-  text-decoration: underline;
+  margin-bottom: 20px;
 }
 
 footer .commit-count {
   color: #C5C6C7;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 footer .commit-count img {
   color: white;
-  width: 20px;
+  width: 15px;
   -webkit-transform: translateY(3px);
           transform: translateY(3px);
 }
