@@ -12,8 +12,6 @@ app.run(function ($rootScope, $timeout, $http) {
     let request = {
         method: 'GET', 
         url: 'https://api.github.com/repos/humza288/humza288.github.io/commits', 
-        headers: {
-        }
     }
 
     $http(request).then(function(response) {
