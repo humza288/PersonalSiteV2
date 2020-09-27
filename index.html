@@ -28,7 +28,7 @@
           </div>
     </div>
 
-    <div id="navbar" ng-class="{'nav-displayed': isActive, 'fade': !isLoading, boxShadow: showBoxShadow}" class="nav" ng-controller="navCtrl">
+    <div id="navbar" ng-class="{'nav-displayed': isActive, 'fade': showNav, boxShadow: showBoxShadow}" class="nav" ng-controller="navCtrl">
         <div ng-class="{'menu': !isActive, 'menu-displayed': isActive}">
             <ul>
                 <a href="#about" ng-click="toggleMenu(false)"><li>About</li></a>
@@ -43,7 +43,7 @@
         </div>
         <div class="links">
             <ul>
-                <li><a href="#about">About</a></li>
+                <li><a href="#about" ng-click="toggleNav($event)">About</a></li>
                 <li><a href="#projects" ng-click="toggleNav($event)">Projects</a></li>
                 <li class="contact-link"><a href="#contact" ng-click="toggleNav($event)">Contact</a></li>
                 <a href="https://docs.google.com/document/d/1agnl-3-RmlTlGe2BXKE3tLZMdfBm4iiI-AFq5eKGiVM/export?format=pdf"><li class="cv">CV</li></a>

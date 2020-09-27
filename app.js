@@ -24,6 +24,7 @@ app.run(function ($rootScope, $timeout, $http) {
     $rootScope.showBoxShadow = true
     $rootScope.showText = false
     $rootScope.showIcon = false
+    $rootScope.showNav = false
 
     $rootScope.stopLoading = function() {
         $rootScope.isLoading = false
@@ -36,11 +37,15 @@ app.run(function ($rootScope, $timeout, $http) {
         $timeout(function () {
             $rootScope.showText = true
 
-
             $timeout(function () {
                 $rootScope.showIcons = true
-            }, 300);
+
+                $timeout(function () {
+                    $rootScope.showNav = true
+                }, 300);
             
+            }, 300);
+
         }, 300);
 
     }, 2500);
