@@ -147,18 +147,23 @@
     }
 
     .main-screen {
-        width: 100%;
+        width: 95%;
         height: 100vh !important;
         margin-bottom: 50;
         padding-bottom: 0;
+    
         .hello-text {
             span {
                 font-size: 45px;
             }
         }
 
+        .details-text {
+            font-size: 16px;
+        }
+
         .main-screen-content {
-            width: 100%;
+            width: 90%;
             max-width: 600px;
             margin: auto;
             flex-direction: column;
@@ -178,7 +183,6 @@
             .details {
                 padding: 0px;
                 margin: 0px;
-                width: 100%;
                 width: 90%;
                 margin-left: 5%;
 
@@ -195,7 +199,8 @@
                 }
 
                 .details-icons {
-                    width: 90vw;
+                    margin-left: 0;
+                    width: 100%;
                     max-width: 500px;
                     display: flex;
                     justify-content: space-evenly;

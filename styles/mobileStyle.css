@@ -139,7 +139,7 @@
             transform: translateY(-7px) rotate(calc(315deg + 360deg));
   }
   .main-screen {
-    width: 100%;
+    width: 95%;
     height: 100vh !important;
     margin-bottom: 50;
     padding-bottom: 0;
@@ -147,8 +147,11 @@
   .main-screen .hello-text span {
     font-size: 45px;
   }
+  .main-screen .details-text {
+    font-size: 16px;
+  }
   .main-screen .main-screen-content {
-    width: 100%;
+    width: 90%;
     max-width: 600px;
     margin: auto;
     -webkit-box-orient: vertical;
@@ -169,7 +172,6 @@
   .main-screen .main-screen-content .details {
     padding: 0px;
     margin: 0px;
-    width: 100%;
     width: 90%;
     margin-left: 5%;
   }
@@ -183,7 +185,8 @@
     width: 100%;
   }
   .main-screen .main-screen-content .details .details-icons {
-    width: 90vw;
+    margin-left: 0;
+    width: 100%;
     max-width: 500px;
     display: -webkit-box;
     display: -ms-flexbox;
