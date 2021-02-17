@@ -1,6 +1,7 @@
 const cards = document.querySelectorAll('.card');
 const nav = document.querySelector('.nav');
 const forms = document.querySelectorAll('.contact-form');
+const project_images = document.querySelectorAll('.project-image');
 
 let observer = new IntersectionObserver((enteries) => {
     enteries.forEach(entry => {
@@ -10,6 +11,11 @@ let observer = new IntersectionObserver((enteries) => {
         }
     })
 })
+
+project_images.forEach(project_images => {
+    observer.observe(project_images)
+})
+
 
 cards.forEach(card => {
     observer.observe(card);

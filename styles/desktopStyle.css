@@ -468,17 +468,54 @@ body a {
 .projects-container .project-cards .card-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 480px 480px;
-      grid-template-columns: 480px 480px;
-  grid-auto-rows: 320px;
-  grid-gap: 30px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
 }
 
-.projects-container .project-cards .card-container .card {
+.projects-container .project-cards .card-container .reversed {
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: reverse !important;
+      -ms-flex-direction: row-reverse !important;
+          flex-direction: row-reverse !important;
+}
+
+.projects-container .project-cards .card-container .card-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.projects-container .project-cards .card-container .card-row .mineguyz {
+  margin-left: 30px;
+}
+
+.projects-container .project-cards .card-container .card-row .minesweeper {
+  margin-left: 30px;
+}
+
+.projects-container .project-cards .card-container .card-row .project-image {
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  opacity: 0;
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
+}
+
+.projects-container .project-cards .card-container .card-row .card {
   font-family: 'Ubuntu', sans-serif;
   -webkit-transition: 0.8s ease-in-out;
   transition: 0.8s ease-in-out;
@@ -487,6 +524,8 @@ body a {
   opacity: 0;
   width: 100%;
   height: 100%;
+  max-width: 480px;
+  max-height: 350px;
   background-color: #010c14;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -501,59 +540,59 @@ body a {
   border-radius: 2px;
 }
 
-.projects-container .project-cards .card-container .card .card-header {
+.projects-container .project-cards .card-container .card-row .card .card-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: calc(20% - 20px);
 }
 
-.projects-container .project-cards .card-container .card .card-header .card-title {
+.projects-container .project-cards .card-container .card-row .card .card-header .card-title {
   width: 80%;
   font-size: 20px;
   font-weight: bold;
   color: #66FCF1;
 }
 
-.projects-container .project-cards .card-container .card .card-header .card-title span {
+.projects-container .project-cards .card-container .card-row .card .card-header .card-title span {
   float: left;
   padding-left: 40px;
   margin-top: 40px;
 }
 
-.projects-container .project-cards .card-container .card .card-header .card-title span i {
+.projects-container .project-cards .card-container .card-row .card .card-header .card-title span i {
   margin-right: 10px;
 }
 
-.projects-container .project-cards .card-container .card .card-header .github-icon {
+.projects-container .project-cards .card-container .card-row .card .card-header .github-icon {
   width: 20%;
   font-size: 40px;
   color: white;
 }
 
-.projects-container .project-cards .card-container .card .card-header .github-icon i {
+.projects-container .project-cards .card-container .card-row .card .card-header .github-icon i {
   float: right;
   padding-right: 40px;
   margin-top: 28px;
 }
 
-.projects-container .project-cards .card-container .card .card-header .github-icon i:hover {
+.projects-container .project-cards .card-container .card-row .card .card-header .github-icon i:hover {
   color: #66FCF1 !important;
 }
 
-.projects-container .project-cards .card-container .card .card-text {
+.projects-container .project-cards .card-container .card-row .card .card-text {
   font-family: 'Open Sans';
   height: calc(80% - 80px);
   width: 100%;
   color: rgba(255, 255, 255, 0.8);
 }
 
-.projects-container .project-cards .card-container .card .card-text p {
+.projects-container .project-cards .card-container .card-row .card .card-text p {
   margin: 40px;
   margin-top: 40px;
 }
 
-.projects-container .project-cards .card-container .card .card-footer {
+.projects-container .project-cards .card-container .card-row .card .card-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -564,19 +603,19 @@ body a {
   font-size: 14;
 }
 
-.projects-container .project-cards .card-container .card .card-footer .card-date {
+.projects-container .project-cards .card-container .card-row .card .card-footer .card-date {
   color: #45A29E;
 }
 
-.projects-container .project-cards .card-container .card .card-footer .card-date .technology {
+.projects-container .project-cards .card-container .card-row .card .card-footer .card-date .technology {
   margin-right: 10px;
 }
 
-.projects-container .project-cards .card-container .card .card-footer .card-date .technology i {
+.projects-container .project-cards .card-container .card-row .card .card-footer .card-date .technology i {
   margin-right: 2px;
 }
 
-.projects-container .project-cards .card-container .card:hover {
+.projects-container .project-cards .card-container .card-row .card:hover {
   -webkit-transform: scale(1.05, 1.05) !important;
           transform: scale(1.05, 1.05) !important;
 }
